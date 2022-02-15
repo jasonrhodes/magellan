@@ -1,0 +1,27 @@
+version: '2'
+networks:
+  front:
+  auth:
+  back:
+services:
+  frontend:
+    build: ./frontend
+    labels:
+      co.elastic.description: some description
+      co.elastic.group: some group
+    networks:
+      - front
+    ports:
+      - '8080:80'
+    depends_on:
+      - node-proxy-api
+  node-proxy-api:
+    build: ./node-backend-1
+    labels:
+      co.elastic.description: some other description
+      co.elastic.ecs: some other group
+    networks:
+      - front
+      - back
+    ports:
+      - '3000:3000'
