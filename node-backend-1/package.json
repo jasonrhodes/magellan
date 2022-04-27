@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "tsc": "tsc",
+    "start": "ts-node ./server.ts",
+    "start:prod": "node ./build/server.js"
+  },
+  "dependencies": {
+    "fastify": "^3.27.1",
+    "fastify-cors": "^6.0.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}

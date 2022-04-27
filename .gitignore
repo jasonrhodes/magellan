@@ -1,3 +1,4 @@
 node_modules
 frontend/build
 .DS_Store
+node-backend-1/build
