@@ -1,6 +1,0 @@
-[submodule "frontend"]
-	path = frontend
-	url = ./frontend
-[submodule "node-backend-1"]
-	path = node-backend-1
-	url = ./node-backend-1
