@@ -5,6 +5,7 @@ networks:
   back:
 services:
   frontend:
+    # image: rhodesjason/magellan-frontend
     build: ./frontend
     labels:
       co.elastic.description: some description

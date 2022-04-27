@@ -4,13 +4,12 @@ metadata:
   annotations:
     co.elastic.description: some description
     co.elastic.group: some group
-    kompose.cmd: kompose convert
-    kompose.version: 1.26.1 (HEAD)
   creationTimestamp: null
   labels:
     io.kompose.service: frontend
   name: frontend
 spec:
+  type: LoadBalancer
   ports:
     - name: "8080"
       port: 8080

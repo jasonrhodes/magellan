@@ -4,14 +4,12 @@ metadata:
   annotations:
     co.elastic.description: some other description
     co.elastic.ecs: some other group
-    kompose.cmd: kompose convert
-    kompose.version: 1.26.1 (HEAD)
   creationTimestamp: null
   labels:
     io.kompose.service: node-proxy-api
   name: node-proxy-api
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       io.kompose.service: node-proxy-api
@@ -21,8 +19,6 @@ spec:
       annotations:
         co.elastic.description: some other description
         co.elastic.ecs: some other group
-        kompose.cmd: kompose convert
-        kompose.version: 1.26.1 (HEAD)
       creationTimestamp: null
       labels:
         io.kompose.network/magellan-back: "true"
@@ -30,7 +26,7 @@ spec:
         io.kompose.service: node-proxy-api
     spec:
       containers:
-        - image: node-proxy-api
+        - image: rhodesjason/magellan-nodejs-backend-1
           name: node-proxy-api
           ports:
             - containerPort: 3000

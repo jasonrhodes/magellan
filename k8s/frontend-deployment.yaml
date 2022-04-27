@@ -4,14 +4,12 @@ metadata:
   annotations:
     co.elastic.description: some description
     co.elastic.group: some group
-    kompose.cmd: kompose convert
-    kompose.version: 1.26.1 (HEAD)
   creationTimestamp: null
   labels:
     io.kompose.service: frontend
   name: frontend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       io.kompose.service: frontend
@@ -21,15 +19,13 @@ spec:
       annotations:
         co.elastic.description: some description
         co.elastic.group: some group
-        kompose.cmd: kompose convert
-        kompose.version: 1.26.1 (HEAD)
       creationTimestamp: null
       labels:
         io.kompose.network/magellan-front: "true"
         io.kompose.service: frontend
     spec:
       containers:
-        - image: frontend
+        - image: rhodesjason/magellan-frontend
           name: frontend
           ports:
             - containerPort: 80

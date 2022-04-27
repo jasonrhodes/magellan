@@ -4,8 +4,6 @@ metadata:
   annotations:
     co.elastic.description: some other description
     co.elastic.ecs: some other group
-    kompose.cmd: kompose convert
-    kompose.version: 1.26.1 (HEAD)
   creationTimestamp: null
   labels:
     io.kompose.service: node-proxy-api
