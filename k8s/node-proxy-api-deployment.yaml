@@ -31,5 +31,35 @@ spec:
           ports:
             - containerPort: 3000
           resources: {}
+          env:
+            - name: ELASTIC_APM_SERVER_URL
+              valueFrom:
+                secretKeyRef:
+                  name: apm-server-config
+                  key: url
+                  optional: false
+            - name: ELASTIC_APM_SECRET_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: apm-server-config
+                  key: token
+                  optional: false
+            - name: ELASTIC_APM_ENVIRONMENT
+              value: production
+            - name: ELASTIC_APM_SERVICE_NAME
+              value: magellan-nodejs
       restartPolicy: Always
 status: {}
+
+# spec:
+#   containers:
+#   - name: mycontainer
+#     image: redis
+#     env:
+#       - name: SECRET_USERNAME
+#         valueFrom:
+#           secretKeyRef:
+#             name: mysecret
+#             key: username
+#             optional: false # same as default; "mysecret" must exist
+#                             # and include a key named "username"
