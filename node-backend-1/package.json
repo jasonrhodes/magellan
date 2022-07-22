@@ -5,6 +5,7 @@
     "start:prod": "node ./build/server.js"
   },
   "dependencies": {
+    "elastic-apm-node": "^3.37.0",
     "fastify": "^3.27.1",
     "fastify-cors": "^6.0.2"
   },
