@@ -6,3 +6,4 @@ node-backend-1/build
 .env.leave
 */.env
 */.env.leave
+.vscode
